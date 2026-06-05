@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varshini C R - Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --color-cream: #FAF7F2;
+            --color-beige: #E9DFD0;
+            --color-chocolate: #5C4033;
+            --color-gold: #D4AF37;
+            --color-charcoal: #222222;
+            --font-heading: 'Playfair Display', serif;
+            --font-sans: 'Poppins', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-cream);
+            color: var(--color-charcoal);
+            line-height: 1.5;
+            padding: 40px 20px;
+        }
+
+        .controls {
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-back {
+            background-color: transparent;
+            color: var(--color-chocolate);
+            border: 1px solid var(--color-chocolate);
+        }
+
+        .btn-back:hover {
+            background-color: var(--color-chocolate);
+            color: var(--color-cream);
+        }
+
+        .btn-print {
+            background-color: var(--color-chocolate);
+            color: var(--color-cream);
+            border: 1px solid var(--color-chocolate);
+            box-shadow: 0 4px 10px rgba(92, 64, 51, 0.15);
+        }
+
+        .btn-print:hover {
+            background-color: var(--color-cream);
+            color: var(--color-chocolate);
+            transform: translateY(-2px);
+        }
+
+        /* Resume Document Paper Container */
+        .resume-paper {
+            background-color: white;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 50px;
+            box-shadow: 0 10px 40px rgba(92, 64, 51, 0.08);
+            border-radius: 8px;
+            border: 1px solid rgba(92, 64, 51, 0.06);
+            position: relative;
+        }
+
+        .resume-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 2px solid var(--color-chocolate);
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+
+        .header-left h1 {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            color: var(--color-chocolate);
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .header-left p {
+            font-size: 0.95rem;
+            color: var(--color-gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 0.85rem;
+            color: #555;
+        }
+
+        .header-right p {
+            margin-bottom: 4px;
+        }
+
+        .header-right a {
+            color: var(--color-chocolate);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .header-right a:hover {
+            color: var(--color-gold);
+        }
+
+        /* Sections */
+        .resume-section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            color: var(--color-chocolate);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid rgba(92, 64, 51, 0.15);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            font-size: 1.1rem;
+            color: var(--color-gold);
+        }
+
+        /* Common details */
+        .item-row {
+            margin-bottom: 15px;
+        }
+
+        .item-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--color-charcoal);
+            margin-bottom: 3px;
+        }
+
+        .item-org {
+            font-style: italic;
+            font-weight: 500;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        .item-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #777;
+            margin-bottom: 5px;
+        }
+
+        .item-desc {
+            font-size: 0.88rem;
+            color: #444;
+            text-align: justify;
+        }
+
+        /* Lists */
+        .resume-list {
+            list-style: none;
+        }
+
+        .resume-list li {
+            position: relative;
+            padding-left: 15px;
+            font-size: 0.88rem;
+            color: #444;
+            margin-bottom: 6px;
+        }
+
+        .resume-list li::before {
+            content: "•";
+            color: var(--color-gold);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: -1px;
+        }
+
+        /* Tables */
+        .resume-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+            margin-top: 5px;
+        }
+
+        .resume-table th, .resume-table td {
+            padding: 8px 10px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .resume-table th {
+            font-weight: 600;
+            background-color: var(--color-cream);
+            color: var(--color-chocolate);
+        }
+
+        /* Skills grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .skill-group {
+            margin-bottom: 10px;
+        }
+
+        .skill-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-chocolate);
+            margin-bottom: 3px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .skill-values {
+            font-size: 0.88rem;
+            color: #444;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background-color: white;
+                color: black;
+                padding: 0;
+            }
+            .controls {
+                display: none;
+            }
+            .resume-paper {
+                box-shadow: none;
+                border: none;
+                padding: 0;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="controls">
+        <a href="index.html" class="btn btn-back"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
+        <button onclick="window.print()" class="btn btn-print"><i class="fa-solid fa-print"></i> Print Resume / Save PDF</button>
+    </div>
+
+    <div class="resume-paper">
+        <header class="resume-header">
+            <div class="header-left">
+                <h1>VARSHINI C R</h1>
+                <p>AI & Data Science Engineering Student</p>
+            </div>
+            <div class="header-right">
+                <p><i class="fa-solid fa-phone"></i> +91 93425 23040</p>
+                <p><i class="fa-regular fa-envelope"></i> varshinichellamuthu245@gmail.com</p>
+                <p><i class="fa-brands fa-github"></i> <a href="https://github.com/Varshini-Chellamuthu" target="_blank">github.com/Varshini-Chellamuthu</a></p>
+                <p><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/varshini-c-r-a029302ba/" target="_blank">linkedin.com/in/varshini-c-r-a029302ba/</a></p>
+            </div>
+        </header>
+
+        <!-- EDUCATION -->
+        <section class="resume-section">
+            <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+            <table class="resume-table">
+                <thead>
+                    <tr>
+                        <th>Qualification / Degree</th>
+                        <th>Institution / School</th>
+                        <th>CGPA / Score</th>
+                        <th>Timeline</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>B.Tech AI & DS</strong></td>
+                        <td>Sri Eshwar College of Engineering</td>
+                        <td><strong>8.3 CGPA</strong> (up to 3rd Sem)</td>
+                        <td>2024 - 2028</td>
+                    </tr>
+                    <tr>
+                        <td><strong>HSC</strong></td>
+                        <td>Akshaya Academy</td>
+                        <td><strong>83.9%</strong></td>
+                        <td>2023 - 2024</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SSLC</strong></td>
+                        <td>Swamy Matric Higher Secondary School</td>
+                        <td><strong>91.4%</strong></td>
+                        <td>2021 - 2022</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- INTERNSHIP -->
+        <section class="resume-section">
+            <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Internship Experience</h2>
+            <div class="item-row">
+                <div class="item-header">
+                    <span>AI, Data Analytics & Django Development Intern</span>
+                    <span>Dec 2024</span>
+                </div>
+                <div class="item-org">NIELIT Calicut</div>
+                <div class="item-desc" style="margin-top: 5px;">
+                    Completed a one-month internship focusing on Artificial Intelligence, Data Analytics, and Django Web Development. Gained practical experience in machine learning, data preprocessing, SQL database management, Django application architectures, and full-stack implementation.
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section class="resume-section">
+            <h2 class="section-title"><i class="fa-solid fa-laptop-code"></i> Academic Projects</h2>
+            
+            <div class="item-row">
+                <div class="item-header">
+                    <span>Project 1: CareConnect (Medical Dashboard)</span>
+                    <span>May 2026</span>
+                </div>
+                <div class="item-org">Tech Stack: React, Django, PostgreSQL, HTML, CSS, JavaScript</div>
+                <div class="item-desc" style="margin-top: 3px;">
+                    Developed a robust healthcare management system containing custom dashboards for patients, doctors, and system administrators. Streamlined clinical scheduling, history tracking, and medical records management.
+                </div>
+            </div>
+
+            <div class="item-row">
+                <div class="item-header">
+                    <span>Project 2: Smart Parking System</span>
+                    <span>Apr 2026</span>
+                </div>
+                <div class="item-org">Tech Stack: Django, IoT Sensors, WebSockets, SQLite, CSS</div>
+                <div class="item-desc" style="margin-top: 3px;">
+                    Built an IoT-integrated parking space coordinator that reads real-time sensor states and updates slot availability dynamically on a web dashboard to reduce parking congestion.
+                </div>
+            </div>
+
+            <div class="item-row">
+                <div class="item-header">
+                    <span>Project 3: Fingerprint Verification System</span>
+                    <span>Mar 2024</span>
+                </div>
+                <div class="item-org">Tech Stack: Python, OpenCV, Scikit-learn, NumPy, Image Processing</div>
+                <div class="item-desc" style="margin-top: 3px;">
+                    Developed a biometric fingerprint verification prototype using OpenCV and machine learning libraries. Implemented custom feature minutiae extraction algorithms for secure biometric authentication.
+                </div>
+            </div>
+
+            <div class="item-row">
+                <div class="item-header">
+                    <span>Project 4: InfoBot (Multilingual Assistant)</span>
+                    <span>Dec 2025</span>
+                </div>
+                <div class="item-org">Tech Stack: Python, Django, NLP, Speech Recognition, Semantic Search | Live Demo: <a href="https://sece-chatbot.onrender.com" target="_blank">sece-chatbot.onrender.com</a></div>
+                <div class="item-desc" style="margin-top: 3px;">
+                    Built a conversational voice assistant leveraging NLP and speech recognition to retrieve real-time college details and respond interactively using gTTS voice synthesis.
+                </div>
+            </div>
+
+            <div class="item-row">
+                <div class="item-header">
+                    <span>Project 5: Smart Blind Stick for Navigation</span>
+                    <span>Jan 2026</span>
+                </div>
+                <div class="item-org">Tech Stack: Arduino Nano, Sensors, GPS, Bluetooth Module, C/C++</div>
+                <div class="item-desc" style="margin-top: 3px;">
+                    Built an IoT-based navigation aid for visually impaired individuals incorporating obstacle detection sensors, vibration feedback, and voice-assisted GPS guidance.
+                </div>
+            </div>
+
+            <div class="item-row">
+                <div class="item-header">
+                    <span>Project 6: Auto Attendance Tracker</span>
+                    <span>Feb 2026</span>
+                </div>
+                <div class="item-org">Tech Stack: Python, Flask, OpenCV, SQLite, HTML, CSS, Jinja2, OpenPyXL</div>
+                <div class="item-desc" style="margin-top: 3px;">
+                    Developed a web-based intelligent attendance management system that automates student attendance using face recognition models trained and executed on classroom images.
+                </div>
+            </div>
+        </section>
+
+        <!-- ACHIEVEMENTS -->
+        <section class="resume-section">
+            <h2 class="section-title"><i class="fa-solid fa-award"></i> Achievements & Extracurriculars</h2>
+            <ul class="resume-list">
+                <li><strong>2nd Prize Winner:</strong> Project Presentation (Expo) conducted by Arjun College of Technology (Futurix, 2026).</li>
+                <li><strong>2nd Prize Winner:</strong> Paper Presentation conducted by KIT Kalaignar Karunanidhi Institute of Technology (2026).</li>
+                <li><strong>2nd Prize Winner:</strong> Design Thinking competition conducted by Sri Eshwar College of Engineering (2026).</li>
+                <li><strong>Finalist:</strong> Reached the final rounds of the INOHACK Hackathon organized by VIT University (Vellore, 2026).</li>
+                <li><strong>Finalist:</strong> Selected for the final stages of the Tdeathon Hackathon organized by Sri Eshwar College of Engineering (2026).</li>
+                <li><strong>Toastmasters Member:</strong> Active member of Sri Eshwar Toastmasters Club; developed communication and leadership skills (2025 - Present).</li>
+            </ul>
+        </section>
+
+        <!-- CERTIFICATIONS -->
+        <section class="resume-section">
+            <h2 class="section-title"><i class="fa-solid fa-certificate"></i> Certifications</h2>
+            <ul class="resume-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px;">
+                <li>Programming in Java – NPTEL (2025)</li>
+                <li>Certification in C and C++ – IIT Bombay (2025)</li>
+                <li>Mastering Data Structures using C/C++ – Udemy (2025)</li>
+                <li>Python for Beginners – Udemy (2025)</li>
+                <li>Introduction to Generative AI – Great Learning (2025)</li>
+            </ul>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="resume-section">
+            <h2 class="section-title"><i class="fa-solid fa-sliders"></i> Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <div class="skill-label">Programming Languages</div>
+                    <div class="skill-values">C, C++, Python, Java</div>
+                </div>
+                <div class="skill-group">
+                    <div class="skill-label">Web Technologies</div>
+                    <div class="skill-values">Django, HTML5, CSS3, JavaScript, REST APIs</div>
+                </div>
+                <div class="skill-group">
+                    <div class="skill-label">AI & Databases</div>
+                    <div class="skill-values">Machine Learning, NLP, Data Analytics, MySQL, MongoDB</div>
+                </div>
+                <div class="skill-group">
+                    <div class="skill-label">Core CS Concepts</div>
+                    <div class="skill-values">Data Structures & Algorithms (DSA), OOP, DBMS, OS, Computer Networks</div>
+                </div>
+                <div class="skill-group" style="grid-column: span 2;">
+                    <div class="skill-label">Tools & Platforms</div>
+                    <div class="skill-values">Git, GitHub, Linux, Postman, Jupyter Notebook, Arduino, MS Excel</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CODING PROFILES -->
+        <section class="resume-section" style="margin-bottom: 0;">
+            <h2 class="section-title"><i class="fa-solid fa-chart-bar"></i> Coding Profiles</h2>
+            <ul class="resume-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px;">
+                <li><strong>LeetCode:</strong> Solved 270+ Problems | Contest Rating: 1588</li>
+                <li><strong>HackerRank:</strong> C (3 Star) | C++ (3 Star) | Python (2 Star)</li>
+                <li><strong>SkillRack:</strong> Solved 1000+ Problems | 10+ Certs | 250+ Bronze Medals</li>
+                <li><strong>CodeChef:</strong> Active Problem Solver</li>
+            </ul>
+        </section>
+    </div>
+
+</body>
+</html>
