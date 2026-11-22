@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,11 +34,20 @@
         }
 
         .controls {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto 30px auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .controls-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
         }
 
         .btn {
@@ -76,6 +86,18 @@
             background-color: var(--color-cream);
             color: var(--color-chocolate);
             transform: translateY(-2px);
+        }
+
+        .btn-gold {
+            background-color: var(--color-gold);
+            color: #222;
+            border: 1px solid var(--color-gold);
+            font-weight: 600;
+        }
+
+        .btn-gold:hover {
+            background-color: transparent;
+            color: var(--color-chocolate);
         }
 
         /* Resume Document Paper Container */
@@ -161,7 +183,7 @@
 
         /* Common details */
         .item-row {
-            margin-bottom: 15px;
+            margin-bottom: 16px;
         }
 
         .item-row:last-child {
@@ -182,6 +204,11 @@
             font-weight: 500;
             color: #555;
             font-size: 0.9rem;
+        }
+
+        .item-org a {
+            color: var(--color-chocolate);
+            text-decoration: underline;
         }
 
         .item-meta {
@@ -228,7 +255,8 @@
             margin-top: 5px;
         }
 
-        .resume-table th, .resume-table td {
+        .resume-table th,
+        .resume-table td {
             padding: 8px 10px;
             text-align: left;
             border-bottom: 1px solid #eee;
@@ -272,9 +300,11 @@
                 color: black;
                 padding: 0;
             }
+
             .controls {
                 display: none;
             }
+
             .resume-paper {
                 box-shadow: none;
                 border: none;
@@ -284,12 +314,16 @@
         }
     </style>
 </head>
+
 <body>
 
     <div class="controls">
         <a href="index.html" class="btn btn-back"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
-        <a href="https://drive.google.com/drive/folders/11HQMKqfYStOEIdwf0-T07JhYLSkONGUU?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-print"><i class="fa-solid fa-arrow-up-right-from-square"></i> Open Google Drive Resume</a>
-        <button onclick="window.print()" class="btn btn-back"><i class="fa-solid fa-print"></i> Print Page</button>
+        <div class="controls-group">
+            <a href="resume.pdf" download="Varshini_CR_Resume.pdf" class="btn btn-print"><i class="fa-solid fa-file-pdf"></i> Download PDF Resume</a>
+            <a href="https://drive.google.com/file/d/12m19nJVYASO0o29uj_Yj65Z3LTWcBDgP/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-back"><i class="fa-solid fa-arrow-up-right-from-square"></i> Google Drive PDF</a>
+            <button onclick="window.print()" class="btn btn-back"><i class="fa-solid fa-print"></i> Print Page</button>
+        </div>
     </div>
 
     <div class="resume-paper">
@@ -300,9 +334,9 @@
             </div>
             <div class="header-right">
                 <p><i class="fa-solid fa-phone"></i> +91 93425 23040</p>
-                <p><i class="fa-regular fa-envelope"></i> varshinichellamuthu245@gmail.com</p>
-                <p><i class="fa-brands fa-github"></i> <a href="https://github.com/Varshini-Chellamuthu" target="_blank">github.com/Varshini-Chellamuthu</a></p>
-                <p><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/varshini-c-r-a029302ba/" target="_blank">linkedin.com/in/varshini-c-r-a029302ba/</a></p>
+                <p><i class="fa-regular fa-envelope"></i> <a href="mailto:varshini.cr2024aids@sece.ac.in">varshini.cr2024aids@sece.ac.in</a></p>
+                <p><i class="fa-brands fa-github"></i> <a href="https://github.com/varshini-thilaga" target="_blank" rel="noopener noreferrer">github.com/varshini-thilaga</a></p>
+                <p><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/varshini-c-r-ba5143321/" target="_blank" rel="noopener noreferrer">linkedin.com/in/varshini-c-r-ba5143321/</a></p>
             </div>
         </header>
 
@@ -322,50 +356,101 @@
                     <tr>
                         <td><strong>B.Tech AI & DS</strong></td>
                         <td>Sri Eshwar College of Engineering</td>
-                        <td><strong>8.3 CGPA</strong> (up to 3rd Sem)</td>
+                        <td><strong>8.69 CGPA</strong> (4th Sem)</td>
                         <td>2024 - 2028</td>
                     </tr>
                     <tr>
                         <td><strong>HSC</strong></td>
-                        <td>Akshaya Academy</td>
+                        <td>Akshaya Academy Matric Hr. Sec. School</td>
                         <td><strong>83.9%</strong></td>
                         <td>2023 - 2024</td>
                     </tr>
                     <tr>
                         <td><strong>SSLC</strong></td>
-                        <td>Swamy Matric Higher Secondary School</td>
-                        <td><strong>91.4%</strong></td>
+                        <td>Swamy Matric Hr. Sec. School</td>
+                        <td><strong>91.3%</strong></td>
                         <td>2021 - 2022</td>
                     </tr>
                 </tbody>
             </table>
         </section>
 
-        <!-- INTERNSHIP -->
+        <!-- INTERNSHIP EXPERIENCE -->
         <section class="resume-section">
             <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Internship Experience</h2>
+            
             <div class="item-row">
                 <div class="item-header">
-                    <span>AI, Data Analytics & Django Development Intern</span>
-                    <span>Dec 2024</span>
+                    <span>DevOps Intern</span>
+                    <span>2026</span>
+                </div>
+                <div class="item-org">Sri Eshwar College Of Engineering</div>
+                <div class="item-meta" style="margin-top: 2px;">
+                    <span>Tech Stack: Linux, Git, GitHub, Docker, Kubernetes (K3s), Ubuntu, VMware, CI/CD, Prometheus, NGINX, MySQL, Cloud Computing, IaC</span>
+                </div>
+                <div class="item-desc">
+                    Gained hands-on experience with DevOps tools and practices by learning Linux administration, Git and GitHub, Docker containerization, Kubernetes (K3s) through practical lab exercises and deployment projects.
+                </div>
+            </div>
+
+            <div class="item-row">
+                <div class="item-header">
+                    <span>AI, Data Analytics & Web Development (Django) Intern</span>
+                    <span>2025</span>
                 </div>
                 <div class="item-org">NIELIT Calicut</div>
-                <div class="item-desc" style="margin-top: 5px;">
-                    Completed a one-month internship focusing on Artificial Intelligence, Data Analytics, and Django Web Development. Gained practical experience in machine learning, data preprocessing, SQL database management, Django application architectures, and full-stack implementation.
+                <div class="item-meta" style="margin-top: 2px;">
+                    <span>Tech Stack: Python, Django, HTML, CSS, JavaScript, SQL, Pandas, NumPy, Machine Learning, Git and GitHub</span>
+                </div>
+                <div class="item-desc">
+                    Completed a one-month internship focusing on Artificial Intelligence, Data Analytics, and Django Web Development. Gained practical experience in Python, SQL, and Machine Learning workflows, including data preprocessing and model building. Built and tested real-world web applications.
                 </div>
             </div>
         </section>
 
-        <!-- PROJECTS -->
+        <!-- ACADEMIC & ENGINEERING PROJECTS -->
         <section class="resume-section">
-            <h2 class="section-title"><i class="fa-solid fa-laptop-code"></i> Academic Projects</h2>
-            
+            <h2 class="section-title"><i class="fa-solid fa-laptop-code"></i> Academic & Engineering Projects</h2>
+
             <div class="item-row">
                 <div class="item-header">
-                    <span>Project 1: CareConnect (Medical Dashboard)</span>
-                    <span>May 2026</span>
+                    <span>Project 1: TruthShield AI - Multi-Agent Digital Media Forensics Platform</span>
+                    <span>2026</span>
                 </div>
-                <div class="item-org">Tech Stack: React, Django, PostgreSQL, HTML, CSS, JavaScript | GitHub: <a href="https://github.com/varshini-thilaga/care-connect-rural" target="_blank" rel="noopener noreferrer">care-connect-rural</a></div>
+                <div class="item-org">Tech Stack: Python, FastAPI, React.js, TypeScript, LangGraph, PyTorch, EfficientNet, OpenCV, EasyOCR, SQLAlchemy, JWT, Tailwind CSS, PostgreSQL | GitHub: <a href="https://github.com/varshini-thilaga/trueshield_ai" target="_blank" rel="noopener noreferrer">trueshield_ai</a></div>
+                <div class="item-desc" style="margin-top: 3px;">
+                    Developed an AI-powered digital media forensics platform that analyzes images and videos for manipulation using a multi-agent architecture. Built with LangGraph, FastAPI, React, and EfficientNet to provide explainable AI analysis and forensic investigation reports.
+                </div>
+            </div>
+
+            <div class="item-row">
+                <div class="item-header">
+                    <span>Project 2: Auto Attendance Tracker</span>
+                    <span>2024</span>
+                </div>
+                <div class="item-org">Tech Stack: Python, Django, OpenCV, face_recognition, NumPy, Pandas, SQLite/MySQL, HTML, CSS, JavaScript, Bootstrap | GitHub: <a href="https://github.com/varshini-thilaga/smart-_attendance_system" target="_blank" rel="noopener noreferrer">smart-_attendance_system</a></div>
+                <div class="item-desc" style="margin-top: 3px;">
+                    Developed an AI-powered smart attendance system that automates classroom attendance from a single group image using OpenCV and facial recognition, reducing manual effort by up to 90%. Built secure role-based dashboards, automated student face registration, and managed attendance records with a relational database.
+                </div>
+            </div>
+
+            <div class="item-row">
+                <div class="item-header">
+                    <span>Project 3: InfoBot (Multilingual College Assistant)</span>
+                    <span>2025</span>
+                </div>
+                <div class="item-org">Tech Stack: Python, Django, NLP, Semantic Search, Speech Recognition, gTTS, Translation APIs, REST APIs, HTML, CSS, JavaScript, MySQL | GitHub: <a href="https://github.com/varshini-thilaga/college-chatbot.git" target="_blank" rel="noopener noreferrer">college-chatbot</a> | Live Demo: <a href="https://sece-chatbot.onrender.com" target="_blank" rel="noopener noreferrer">sece-chatbot.onrender.com</a></div>
+                <div class="item-desc" style="margin-top: 3px;">
+                    Engineered a Django-based AI chatbot with NLP, semantic search, and RESTful APIs to provide real-time, context-aware college information. Implemented voice interaction, multilingual support, and scalable backend architecture using speech recognition and Google Text-to-Speech.
+                </div>
+            </div>
+
+            <div class="item-row">
+                <div class="item-header">
+                    <span>Project 4: CareConnect (Rural Telemedicine & Medical Dashboard)</span>
+                    <span>2026</span>
+                </div>
+                <div class="item-org">Tech Stack: React, Django, PostgreSQL, HTML, CSS, JavaScript | GitHub: <a href="https://github.com/varshini-thilaga/care-connect-rural" target="_blank" rel="noopener noreferrer">care-connect-rural</a> | Live Demo: <a href="https://healthcare-zaxn.onrender.com" target="_blank" rel="noopener noreferrer">healthcare-zaxn.onrender.com</a></div>
                 <div class="item-desc" style="margin-top: 3px;">
                     Developed a robust healthcare management system containing custom dashboards for patients, doctors, and system administrators. Streamlined clinical scheduling, history tracking, and medical records management.
                 </div>
@@ -373,10 +458,10 @@
 
             <div class="item-row">
                 <div class="item-header">
-                    <span>Project 2: Smart Parking System</span>
-                    <span>Apr 2026</span>
+                    <span>Project 5: Smart Parking System</span>
+                    <span>2026</span>
                 </div>
-                <div class="item-org">Tech Stack: Django, IoT Sensors, WebSockets, SQLite, CSS</div>
+                <div class="item-org">Tech Stack: Django, IoT Sensors, WebSockets, SQLite, CSS | Live Demo: <a href="https://car-parking-app-1.onrender.com" target="_blank" rel="noopener noreferrer">car-parking-app-1.onrender.com</a></div>
                 <div class="item-desc" style="margin-top: 3px;">
                     Built an IoT-integrated parking space coordinator that reads real-time sensor states and updates slot availability dynamically on a web dashboard to reduce parking congestion.
                 </div>
@@ -384,45 +469,12 @@
 
             <div class="item-row">
                 <div class="item-header">
-                    <span>Project 3: Fingerprint Verification System</span>
-                    <span>Mar 2024</span>
-                </div>
-                <div class="item-org">Tech Stack: Python, OpenCV, Scikit-learn, NumPy, Image Processing</div>
-                <div class="item-desc" style="margin-top: 3px;">
-                    Developed a biometric fingerprint verification prototype using OpenCV and machine learning libraries. Implemented custom feature minutiae extraction algorithms for secure biometric authentication.
-                </div>
-            </div>
-
-            <div class="item-row">
-                <div class="item-header">
-                    <span>Project 4: InfoBot (Multilingual Assistant)</span>
-                    <span>Dec 2025</span>
-                </div>
-                <div class="item-org">Tech Stack: Python, Django, NLP, Speech Recognition, Semantic Search | Live Demo: <a href="https://sece-chatbot.onrender.com" target="_blank">sece-chatbot.onrender.com</a></div>
-                <div class="item-desc" style="margin-top: 3px;">
-                    Built a conversational voice assistant leveraging NLP and speech recognition to retrieve real-time college details and respond interactively using gTTS voice synthesis.
-                </div>
-            </div>
-
-            <div class="item-row">
-                <div class="item-header">
-                    <span>Project 5: Smart Blind Stick for Navigation</span>
-                    <span>Jan 2026</span>
+                    <span>Project 6: Smart Blind Stick for Navigation</span>
+                    <span>2026</span>
                 </div>
                 <div class="item-org">Tech Stack: Arduino Nano, Sensors, GPS, Bluetooth Module, C/C++</div>
                 <div class="item-desc" style="margin-top: 3px;">
                     Built an IoT-based navigation aid for visually impaired individuals incorporating obstacle detection sensors, vibration feedback, and voice-assisted GPS guidance.
-                </div>
-            </div>
-
-            <div class="item-row">
-                <div class="item-header">
-                    <span>Project 6: Auto Attendance Tracker</span>
-                    <span>Feb 2026</span>
-                </div>
-                <div class="item-org">Tech Stack: Python, Flask, OpenCV, SQLite, HTML, CSS, Jinja2, OpenPyXL</div>
-                <div class="item-desc" style="margin-top: 3px;">
-                    Developed a web-based intelligent attendance management system that automates student attendance using face recognition models trained and executed on classroom images.
                 </div>
             </div>
         </section>
@@ -431,8 +483,9 @@
         <section class="resume-section">
             <h2 class="section-title"><i class="fa-solid fa-award"></i> Achievements & Extracurriculars</h2>
             <ul class="resume-list">
+                <li><strong>State-Level Hackathon:</strong> Participated in TANCAM, a Tamil Nadu State-Level Hackathon (2026).</li>
                 <li><strong>2nd Prize Winner:</strong> Project Presentation (Expo) conducted by Arjun College of Technology (Futurix, 2026).</li>
-                <li><strong>2nd Prize Winner:</strong> Paper Presentation conducted by KIT Kalaignar Karunanidhi Institute of Technology (2026).</li>
+                <li><strong>2nd Prize Winner:</strong> Paper Presentation conducted by Kalaignar Karunanidhi Institute of Technology (KIT, 2026).</li>
                 <li><strong>2nd Prize Winner:</strong> Design Thinking competition conducted by Sri Eshwar College of Engineering (2026).</li>
                 <li><strong>Finalist:</strong> Reached the final rounds of the INOHACK Hackathon organized by VIT University (Vellore, 2026).</li>
                 <li><strong>Finalist:</strong> Selected for the final stages of the Tdeathon Hackathon organized by Sri Eshwar College of Engineering (2026).</li>
@@ -444,11 +497,12 @@
         <section class="resume-section">
             <h2 class="section-title"><i class="fa-solid fa-certificate"></i> Certifications</h2>
             <ul class="resume-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px;">
+                <li>SQL (Basic) – HackerRank (2025)</li>
+                <li>Introduction to Generative AI – IBM SkillsBuild (2025)</li>
                 <li>Programming in Java – NPTEL (2025)</li>
-                <li>Certification in C and C++ – IIT Bombay (2025)</li>
+                <li>Python Programming Mastery – Udemy (2025)</li>
+                <li>C++ Programming – IIT Bombay (2024)</li>
                 <li>Mastering Data Structures using C/C++ – Udemy (2025)</li>
-                <li>Python for Beginners – Udemy (2025)</li>
-                <li>Introduction to Generative AI – Great Learning (2025)</li>
             </ul>
         </section>
 
@@ -461,20 +515,28 @@
                     <div class="skill-values">C, C++, Python, Java</div>
                 </div>
                 <div class="skill-group">
-                    <div class="skill-label">Web Technologies</div>
-                    <div class="skill-values">Django, HTML5, CSS3, JavaScript, REST APIs</div>
+                    <div class="skill-label">Frameworks & Web</div>
+                    <div class="skill-values">Django, HTML5, CSS3, JavaScript, Bootstrap, React, Docker</div>
                 </div>
                 <div class="skill-group">
-                    <div class="skill-label">AI & Databases</div>
-                    <div class="skill-values">Machine Learning, NLP, Data Analytics, MySQL, MongoDB</div>
+                    <div class="skill-label">AI / ML</div>
+                    <div class="skill-values">Machine Learning, NLP, OpenCV, Twilio, Image Processing, LangGraph</div>
+                </div>
+                <div class="skill-group">
+                    <div class="skill-label">DevOps & Cloud</div>
+                    <div class="skill-values">Git, GitHub, Linux, Kubernetes (K3s), REST APIs, Postman, CI/CD</div>
+                </div>
+                <div class="skill-group">
+                    <div class="skill-label">Databases</div>
+                    <div class="skill-values">MySQL, SQLite, PostgreSQL, MongoDB</div>
                 </div>
                 <div class="skill-group">
                     <div class="skill-label">Core CS Concepts</div>
-                    <div class="skill-values">Data Structures & Algorithms (DSA), OOP, DBMS, OS, Computer Networks</div>
+                    <div class="skill-values">DSA, OOP, DBMS, Operating Systems, Computer Networks</div>
                 </div>
                 <div class="skill-group" style="grid-column: span 2;">
                     <div class="skill-label">Tools & Platforms</div>
-                    <div class="skill-values">Git, GitHub, Linux, Postman, Jupyter Notebook, Arduino, MS Excel</div>
+                    <div class="skill-values">Jupyter Notebook, Arduino, MS Excel, Canva, Ubuntu, VMware</div>
                 </div>
             </div>
         </section>
@@ -483,13 +545,14 @@
         <section class="resume-section" style="margin-bottom: 0;">
             <h2 class="section-title"><i class="fa-solid fa-chart-bar"></i> Coding Profiles</h2>
             <ul class="resume-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px;">
-                <li><strong>LeetCode:</strong> Solved 270+ Problems | Contest Rating: 1588</li>
-                <li><strong>HackerRank:</strong> C (3 Star) | C++ (3 Star) | Python (2 Star)</li>
-                <li><strong>SkillRack:</strong> Solved 1000+ Problems | 10+ Certs | 250+ Bronze Medals</li>
-                <li><strong>CodeChef:</strong> Active Problem Solver</li>
+                <li><strong>LeetCode:</strong> Solved 250+ Problems | Contest Rating: 1452 | Global Rank: 547532</li>
+                <li><strong>Codeforces:</strong> Active Problem Solver (<a href="https://codeforces.com/profile/varshini_c_r" target="_blank" rel="noopener noreferrer">varshini_c_r</a>)</li>
+                <li><strong>SkillRack:</strong> Solved 1000+ Problems | 15 Certs | 266+ Bronze Medals | Rank: 26604</li>
+                <li><strong>HackerRank:</strong> C & C++ (3 Star) | Python (2 Star)</li>
             </ul>
         </section>
     </div>
 
 </body>
+
 </html>
